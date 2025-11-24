@@ -12,7 +12,17 @@ class NilaiController extends Controller
 {
     public function index()
     {
-        $nilai = Nilai::with(['mahasiswa', 'mataKuliah'])->get();
+        $user = auth()->user();
+        if ($user->role === 'mahasiswa') {
+            $mhs = Mahasiswa::where('email', $user->email)->first();
+            if ($mhs) {
+                $nilai = Nilai::with(['mahasiswa', 'mataKuliah'])->where('NIM', $mhs->NIM)->get();
+            } else {
+                $nilai = collect();
+            }
+        } else {
+            $nilai = Nilai::with(['mahasiswa', 'mataKuliah'])->get();
+        }
         return view('nilai', ['nilai' => $nilai]);
     }
 

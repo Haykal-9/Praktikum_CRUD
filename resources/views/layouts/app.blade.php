@@ -41,7 +41,9 @@
                         <li class="nav-item"><a class="nav-link {{ request()->is('dosen*') ? 'active' : '' }}" href="/dosen">Dosen</a></li>
                     @endif
                     <li class="nav-item"><a class="nav-link {{ request()->is('mahasiswa*') ? 'active' : '' }}" href="/mahasiswa">Mahasiswa</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->is('matakuliah*') ? 'active' : '' }}" href="/matakuliah">Mata Kuliah</a></li>
+                    @if(in_array($role, ['admin', 'dosen']))
+                        <li class="nav-item"><a class="nav-link {{ request()->is('matakuliah*') ? 'active' : '' }}" href="/matakuliah">Mata Kuliah</a></li>
+                    @endif
                     <li class="nav-item"><a class="nav-link {{ request()->is('nilai*') ? 'active' : '' }}" href="/nilai">Nilai</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">

@@ -42,7 +42,6 @@
             <ul>
                 <li><a href="/mahasiswa">Data Diri</a></li>
                 <li><a href="/nilai">Lihat Nilai</a></li>
-                <li><a href="/matakuliah">Lihat Mata Kuliah</a></li>
             </ul>
 
         @else

@@ -15,7 +15,7 @@
 
     <ul>
       <li><a href="/mahasiswa">Data Mahasiswa</a></li>
-      <li><a href="/matakuliah">Data Mata Kuliah</a></li>
+
       <li><a href="/nilai">Data Nilai</a></li>
       <li><a href="/dashboard">Dashboard Utama</a></li>
     </ul>

@@ -53,6 +53,7 @@ Route::middleware(['auth', 'role:admin-dosen'])->group(function () {
     // Read Only Access for Dosen (and Admin)
     Route::get('/dosen', [DosenController::class, 'index']);
     Route::get('/prodi', [ProdiController::class, 'index']);
+    Route::get('/matakuliah', [MataKuliahController::class, 'index']);
 });
 
 // Public/Shared Routes (Authenticated - All Roles including Mahasiswa)
@@ -60,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
     // Mahasiswa, Nilai, & Mata Kuliah (Read Only)
     Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
     Route::get('/nilai', [NilaiController::class, 'index']);
-    Route::get('/matakuliah', [MataKuliahController::class, 'index']);
+
 });
 
 
